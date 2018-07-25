@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Palabras Isomorficas</title>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+   <link rel="stylesheet" href="./Vendor/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body style="background-color:lavender;">
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" style="color:indigo; padding-bottom:red; "> Tarea #2</a>
+                  </div>
+                </div>
+              </nav>
+             <div class="text-center" style="background-color: rgb(187, 207, 212)">
+                <h1>Palabras Isomórficas</h1>
+              </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card"  style="background-color:lightblue">
+                    <form>
+                        <div class="form-group">
+                           <h3> <label> Palabra #1:</label> </h3>
+                            <input type="text" class="form-control" id="string1">
+                            <br>
+                           <h3> <label> Palabra #2:</label></h3>
+                            <input type="text" class="form-control" id="string2">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg" onclick="Funcioncita();"> Aceptar </button>
+                        </div>
+
+                        <script type="text/javascript">
+
+                        function Funcioncita(){
+                            var str1= document.getElementById('string1').value;
+                            var str2= document.getElementById('string2').value;
+                            //var texto =alert("Son palabras isomorficas");
+                            var c1=new Array(str1.length);//crea vector
+                            var c2=new Array(str2.length);
+                            var cd1=new Array(str1.length); //crea otro vector con el codigo
+                            var cd2=new Array(str2.length);
+                            
+                            
+                          if(str1==""||str2==""){
+                            alert("no hay palabra");
+                            }                        
+                            else if(str1.length!=str2.length){
+                            alert("No son isomorficas");
+                            }else{ 
+
+                            for(var i=0; i<str1.length; i++){
+
+                                c1[i]= str1.charAt(i); //cargamos vector
+                                c2[i]= str2.charAt(i);
+                                cd1[i]=i;
+                                cd2[i]=i;
+
+                                }
+
+                                // Comparacion, para ver si hay dos letras iguales en el arreglo.
+                                for(var i=0; i<str1.length; i++){
+                                    for(var j=1; j<str1.length; j++){ 
+                                        if(c1[i]==c1[j])
+                                            cd1[j]=i; //cambia el numero en el arreglo del codigo
+
+                                        }
+                                    }
+                                for(var l=0; l<str2.length; l++){
+                                    for(var u=1; u<str2.length; u++){ 
+                                        if(c2[l]==c2[u])
+                                            cd2[u]=l;
+
+                                        }
+                                    }
+                                                                             
+                                    if(JSON.stringify(cd1) === JSON.stringify(cd2)){ //cambio a cadena el arreglo
+                                    alert("son palabras isomorficas");
+                                    
+                                    }else{ 
+                                        alert("no son palabras isomorficas");
+                                    }                                   
+                                                  
+                            }
+                        }
+                        
+                        
+                        </script>
+
+                    </form>
+                </div> 
+            </div>
+        </div>
+    </div> 
+
+</body>
+</html>

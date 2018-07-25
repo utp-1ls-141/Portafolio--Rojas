@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asignación N</title>
+    <link rel="stylesheet" href="./Vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="container">    
+        <form>
+            <div class="form-group">
+            <!--1).leer dos textos y concatenar las entradas y los muestre en un modal
+                2).leer un textbox n y genere una matriz cuadrada "nxn", donde la diagonal
+                principal son solo numeros divisibles entre 3. Todos los numeros deben ser gene
+                rados de manera pseudo-aleatoria , la matriz debe desplegarse en un modal --> 
+            
+            <h2> Textos </h2>           
+            <h3> <label> Palabra #1:</label> </h3>
+            <input type="text" class="form-control" placeholder="String1" id="String1">
+            <br>
+
+        <h3> <label> Palabra #2:</label></h3>
+            <input type="text" class="form-control" placeholder="String2" id="String2">
+            <div>
+
+            <div class="text-center">
+            <br>
+            <button  type="button" onClick="control1()" class="btn btn-info" data-toggle="modal" data-target="#myModal"> Concatenar Cadenas </button>
+            <button  type="button" onClick="control2()" class="btn btn-info" data-toggle="modal" data-target="#myModal"> Generar Matriz </button>
+            </div>   
+                        
+        </form>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                   <!-- <h4 class="modal-title">Modal Header</h4>-->
+                </div>
+                <div class="modal-body">
+                    <!-- resp -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>  
+    
+    <script src="./Concatenacion.js"> </script>
+
+</body>
+</html>
